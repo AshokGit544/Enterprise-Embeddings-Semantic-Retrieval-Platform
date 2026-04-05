@@ -22,3 +22,28 @@ The goal of this project is to show how embedding-oriented pipelines improve sem
 - NumPy
 - Scikit-learn
 - Google Colab
+
+
+### Sample Semantic Search Output
+
+For the query:
+
+`engineering document about sensor failure on equipment EQP1002 in plant PLT200`
+
+the retrieval pipeline returned the following top matching document chunks ranked by similarity score.
+
+| Rank | Chunk ID         | Document ID | Domain        | Document Type       | Plant   | Supplier | Equipment | Date       | Similarity Score |
+|------|------------------|-------------|---------------|---------------------|---------|----------|-----------|------------|------------------|
+| 1    | DOC00220_CHUNK_1 | DOC00220    | engineering   | engineering_change  | PLT200  | Aptiv    | EQP1002   | 2024-09-07 | 0.553501         |
+| 2    | DOC00011_CHUNK_1 | DOC00011    | engineering   | engineering_change  | PLT200  | Denso    | EQP1002   | 2024-11-03 | 0.545139         |
+| 3    | DOC00289_CHUNK_1 | DOC00289    | engineering   | supplier_record     | PLT200  | Aptiv    | EQP1002   | 2024-12-21 | 0.522913         |
+| 4    | DOC00053_CHUNK_1 | DOC00053    | quality       | engineering_change  | PLT200  | Denso    | EQP1002   | 2024-11-05 | 0.514800         |
+| 5    | DOC00244_CHUNK_1 | DOC00244    | engineering   | engineering_change  | PLT200  | Lear     | EQP1002   | 2024-02-25 | 0.513283         |
+
+**Observation:**  
+The highest-ranked results matched the main business conditions from the query, especially:
+- domain = engineering
+- plant = PLT200
+- equipment = EQP1002
+
+This shows that the retrieval pipeline is correctly identifying the most relevant document chunks using metadata-aware semantic search.
