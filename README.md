@@ -47,3 +47,21 @@ The highest-ranked results matched the main business conditions from the query, 
 - equipment = EQP1002
 
 This shows that the retrieval pipeline is correctly identifying the most relevant document chunks using metadata-aware semantic search.
+
+## Final Pipeline Summary
+
+The pipeline execution summary provides a quick overview of the overall processing and results.
+
+### Summary Details
+
+- **Total Documents Processed:** 300  
+- **Total Chunks Created:** ~600+  
+- **Vector Records Generated:** ~600+  
+- **Query Used:**  
+  `engineering document about sensor failure on equipment EQP1002 in plant PLT200`  
+
+- **Top Matching Document:**  
+  DOC00220  
+
+### What this means
+The system successfully processed enterprise documents, converted them into searchable format, and returned the most relevant document based on the given query.
